@@ -13,7 +13,7 @@ public class File implements FileSystemComponent {
     }
 
     @Override
-    public void print(String prefix) {
-        System.out.println(prefix + "- " + name);
+    public void print(String path, String prefix) {
+        System.out.println(prefix + "|-- " + name);
     }
 }

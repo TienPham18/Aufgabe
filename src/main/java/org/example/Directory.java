@@ -30,10 +30,13 @@ public class Directory implements FileSystemComponent {
 
     // Struktur des Dateisystems anzeigen (rekursiv für alle Unterverzeichnisse und Dateien)
     @Override
-    public void print(String prefix) {
+    public void print(String path, String prefix) {
+        String currentPath = path + "/" + name;
         System.out.println(prefix + "+ " + name);
+
+        String newPrefix = prefix + "| ";
         for (FileSystemComponent component : components) {
-            component.print(prefix + "   ");
+            component.print(currentPath, newPrefix);
         }
     }
 }

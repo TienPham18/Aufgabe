@@ -26,7 +26,7 @@ public class FileSystemBeispiel {
 
         // Struktur anzeigen
         System.out.println("\nStruktur des Dateisystems:");
-        root.print("");
+        root.print("", "");
 
         // Demonstration des Entfernens eines Elements
         System.out.println("\nEntfernen von CoverLetter.docx aus Documents:");
@@ -36,7 +36,7 @@ public class FileSystemBeispiel {
 
         // Aktualisierte Struktur anzeigen
         System.out.println("\nAktualisierte Struktur des Dateisystems:");
-        root.print("");
+        root.print("", "");
     }
 
 }
