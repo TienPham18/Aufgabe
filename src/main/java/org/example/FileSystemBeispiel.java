@@ -7,12 +7,12 @@ public class FileSystemBeispiel {
         File resume = new File("Resume.docx");
         File coverLetter = new File("CoverLetter.docx");
         File vacationPhoto = new File("Vacation.jpg");
-        File readme = new File("Readme.txt");
 
         // Verzeichnisse erstellen
         Directory root = new Directory("Root");
         Directory documents = new Directory("Documents");
         Directory photos = new Directory("Photos");
+        Directory readme = new Directory("Readme.txt");
 
         // Dateien und Verzeichnisse hinzufügen
         documents.addComponent(resume);
