@@ -17,6 +17,7 @@ public class FileSystemBeispiel {
         // Dateien und Verzeichnisse hinzufügen
         documents.addComponent(resume);
         documents.addComponent(coverLetter);
+        documents.addComponent(root);
 
         photos.addComponent(vacationPhoto);
 
