@@ -20,6 +20,12 @@ public class Directory implements FileSystemComponent {
     // Methode zum Hinzufügen eines Components (Datei oder Verzeichnis)
     public void addComponent(FileSystemComponent component) {
 
+        // prüft, ob Duplikate vorhanden sind, bevor es hinzugefügt wird
+        if (isDuplicated(component.getName())) {
+            System.out.println("Error: Duplicate name detected - " + component.getName() + " in directory " + name);
+            return;
+        }
+
         if (component instanceof Directory) {
             Directory directory = (Directory) component;
             if (isDescendant(directory)) {
@@ -33,7 +39,17 @@ public class Directory implements FileSystemComponent {
         System.out.println("Added " + component.getName() + " to " + name);
     }
 
-    // überprüft, ob durch das Hinzufügen eines Verzeichnisses ein Zyklus erstellt würde
+    // prüft, ob bereits eine Komponente mit gleichem Namen vorhanden ist
+    private boolean isDuplicated(String componentName) {
+        for (FileSystemComponent component : components) {
+            if (component.getName().equals(componentName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // prüft, ob durch das Hinzufügen eines Verzeichnisses ein Zyklus erstellt würde
     private boolean isDescendant(Directory directory) {
         Directory current = this;
         while (current != null) {
